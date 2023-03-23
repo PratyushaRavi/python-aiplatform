@@ -22,7 +22,7 @@ from google.cloud import aiplatform
 def upload_new_aliased_model_version_sample(
     parent_name: str,
     artifact_uri: str,
-    serving_container_image: str,
+    serving_container_image_uri: str,
     is_default_version: bool,
     version_aliases: List[str],
     version_description: str,
@@ -50,7 +50,7 @@ def upload_new_aliased_model_version_sample(
     # 'projects/<your-project-id>/locations/<your-region>/models/<your-model-id>'
     model = aiplatform.Model.upload(
         artifact_uri=artifact_uri,
-        serving_container_image=serving_container_image,
+        serving_container_image_uri=serving_container_image_uri,
         parent_name=parent_name,
         is_default_version=is_default_version,
         version_aliases=version_aliases,
